@@ -31,7 +31,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="DAr-ft-f99">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="DAr-ft-f99" customClass="CardCollectionViewCell" customModule="MemoryMatch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="158" height="224"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -56,6 +56,10 @@
                                             <constraint firstItem="6lq-JL-OdT" firstAttribute="top" secondItem="DAr-ft-f99" secondAttribute="top" id="spA-Va-Cio"/>
                                             <constraint firstItem="p4Z-kb-vtr" firstAttribute="top" secondItem="DAr-ft-f99" secondAttribute="top" id="zAn-sW-vHE"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="backImageView" destination="p4Z-kb-vtr" id="Fqi-28-3mr"/>
+                                            <outlet property="frontImageView" destination="6lq-JL-OdT" id="Zmt-Wz-W7F"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -73,6 +77,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="gFB-go-cfQ" id="Mlz-cY-Neu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

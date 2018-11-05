@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		951EFA9E2190DF0000C67617 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951EFA9D2190DF0000C67617 /* CardCollectionViewCell.swift */; };
 		9551E0BE21908CFE007A270B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9551E0BD21908CFE007A270B /* AppDelegate.swift */; };
 		9551E0C021908CFE007A270B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9551E0BF21908CFE007A270B /* ViewController.swift */; };
 		9551E0C321908CFE007A270B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9551E0C121908CFE007A270B /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		951EFA9D2190DF0000C67617 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		9551E0BA21908CFE007A270B /* MemoryMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9551E0BD21908CFE007A270B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9551E0BF21908CFE007A270B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				9551E0BF21908CFE007A270B /* ViewController.swift */,
 				9551E0CF219091E1007A270B /* CardModel.swift */,
 				9551E0D12190937C007A270B /* Card.swift */,
+				951EFA9D2190DF0000C67617 /* CardCollectionViewCell.swift */,
 				9551E0C121908CFE007A270B /* Main.storyboard */,
 				9551E0C421908CFF007A270B /* Assets.xcassets */,
 				9551E0C621908CFF007A270B /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 				9551E0C021908CFE007A270B /* ViewController.swift in Sources */,
 				9551E0BE21908CFE007A270B /* AppDelegate.swift in Sources */,
 				9551E0D0219091E1007A270B /* CardModel.swift in Sources */,
+				951EFA9E2190DF0000C67617 /* CardCollectionViewCell.swift in Sources */,
 				9551E0D22190937C007A270B /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
