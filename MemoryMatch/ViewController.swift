@@ -73,7 +73,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             cell.flipBack()
             
             // Set the status of the card
-            card.isFlipped = false 
+            card.isFlipped = false
             
         }
         
