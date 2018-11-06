@@ -25,9 +25,6 @@ class CardModel {
             // Starts at zero, so you must do one number less and add one to get the first card
             let randomNumber = arc4random_uniform(13) + 1
             
-            // Log the number
-            print(randomNumber)
-            
             // Create a card
             let cardOne = Card()
             cardOne.imageName = "card\(randomNumber)"
