@@ -35,7 +35,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
         
         // This allows the timer to work while scrolling
-        RunLoop.main.add(timer!, forMode: .common)
+        RunLoop.main.add(timer!, forMode: RunLoop.Mode.common)
         
     }
     
@@ -89,7 +89,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         // Check if there is any time left
-        if milliseconds <= 0{
+        if milliseconds <= 0 {
             return
         }
         
@@ -152,6 +152,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             cardOneCell?.remove()
             cardTwoCell?.remove()
             
+            // Check if there are any cards left unmatched
+            checkGameEnded()
+            
         } else {
             
             // It's not a match
@@ -163,9 +166,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             // Flip both cards back
             cardOneCell?.flipBack()
             cardTwoCell?.flipBack()
-            
-            // Check if there are any cards left unmatched
-            checkGameEnded()
             
         }
         
