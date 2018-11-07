@@ -41,6 +41,26 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewDidAppear(_ animated: Bool) {
         
+        // Set cell size
+        let layout = UICollectionViewFlowLayout()
+        
+        // Makes sure there is space between cards and columns
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
+        
+        // Get width
+        let width = self.collectionView.frame.size.width
+        let itemWidth = (width - (10 * 3)) / 4
+        
+        // Get height
+        let itemHeight = itemWidth * 1.4177
+        
+        // Set the size
+        layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
+        
+        // Sets the size of collection view
+        collectionView.setCollectionViewLayout(layout, animated: true)
+        
         // Plays the shuffle sound when the view is loaded
         SoundManager.playSound(.shuffle)
         
