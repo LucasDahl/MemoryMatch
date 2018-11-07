@@ -19,7 +19,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var cardArray = [Card]()
     var firstFlippedCardIndex:IndexPath?
     var timer:Timer?
-    var milliseconds:Float = 15 * 1000 // 10 seconds
+    var milliseconds:Float = 30 * 1000 // 10 seconds
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         // This allows the timer to work while scrolling
         RunLoop.main.add(timer!, forMode: RunLoop.Mode.common)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        // Plays the shuffle sound when the view is loaded
+        SoundManager.playSound(.shuffle)
         
     }
     
@@ -103,6 +110,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             // Flip the card
             cell.flip()
+            
+            // Play the flip sound
+            SoundManager.playSound(.flip)
     
             // Set the status of the car
             card.isFlipped = true
@@ -144,6 +154,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             // It's a match
             
+            // Play matching sound
+            SoundManager.playSound(.match)
+            
             // Set the statuses of the cards
             cardOne.isMatched = true
             cardTwo.isMatched = true
@@ -158,6 +171,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         } else {
             
             // It's not a match
+            
+            // Play sound when it isnt a match
+            SoundManager.playSound(.nomatch)
             
             // Set the status of the cards
             cardOne.isFlipped = false
