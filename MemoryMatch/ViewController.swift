@@ -289,7 +289,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let mainMenu = self.storyboard?.instantiateViewController(withIdentifier: "mainMenu") as! MainMenu
             self.present(mainMenu, animated: true, completion: nil)
             
-            
         }
         
         // Adds the action to the alert
@@ -304,6 +303,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     // This is a function to start a new game
     func newGame() {
         
+        // Reloads data to play again
         collectionView.reloadData()
         timerLabel.textColor = UIColor.black
         cardArray = model.getCards()
@@ -312,7 +312,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         RunLoop.main.add(timer!, forMode: RunLoop.Mode.common)
         
     }
-    
-    
+
 }// End class
 
