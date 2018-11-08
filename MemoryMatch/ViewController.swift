@@ -278,10 +278,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Creats an action for the alert message
         let alertAction = UIAlertAction(title: "Play Again", style: .default) { (action) in
             
-            // TODO: restart the game - Make the same VC reload
-//            let gameScene = self.storyboard?.instantiateViewController(withIdentifier: "gameScene") as! ViewController
-//            self.present(gameScene, animated: true, completion: nil)
-            
+            // Restart the game - Make the same VC reload
             self.newGame()
             
         }
