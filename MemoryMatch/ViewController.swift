@@ -19,7 +19,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var cardArray = [Card]()
     var firstFlippedCardIndex:IndexPath?
     var timer:Timer?
-    var milliseconds:Float = 30 * 1000 // 10 seconds
+    var milliseconds:Float = 10 * 1000 // 10 seconds
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -276,15 +276,32 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         // Creats an action for the alert message
-        let alertAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        let alertAction = UIAlertAction(title: "Play Again", style: .default) { (action) in
+            
+            // TODO: restart the game - Make the same VC reload
+            let gameScene = self.storyboard?.instantiateViewController(withIdentifier: "gameScene") as! ViewController
+            self.present(gameScene, animated: true, completion: nil)
+            
+        }
+        
+        let mainMenuAction = UIAlertAction(title: "Main Menu", style: .default) { (action) in
+            
+            // Brings you back to the main menu
+            let mainMenu = self.storyboard?.instantiateViewController(withIdentifier: "mainMenu") as! MainMenu
+            self.present(mainMenu, animated: true, completion: nil)
+            
+            
+        }
         
         // Adds the action to the alert
         alert.addAction(alertAction)
+        alert.addAction(mainMenuAction)
         
         // Presents the alert
         present(alert, animated: true, completion: nil)
     
     }
+    
     
 }// End class
 
