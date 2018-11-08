@@ -19,7 +19,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var cardArray = [Card]()
     var firstFlippedCardIndex:IndexPath?
     var timer:Timer?
-    var milliseconds:Float = 30 * 1000 // 10 seconds
+    var milliseconds:Float = 10 * 1000 // 10 seconds
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -276,7 +276,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         // Creats an action for the alert message
-        let alertAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        let alertAction = UIAlertAction(title: "Play Again", style: .default) { (action) in
+            
+            self.newGame()
+            
+        }
         
         // Adds the action to the alert
         alert.addAction(alertAction)
@@ -284,6 +288,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Presents the alert
         present(alert, animated: true, completion: nil)
     
+    }
+    
+    
+    // This is a function to start a new game
+    func newGame() {
+        
+        // Reloads data to play again
+        collectionView.reloadData()
+        timerLabel.textColor = UIColor.black
+        cardArray = model.getCards()
+        milliseconds += 10 * 1000
+        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: RunLoop.Mode.common)
+        
     }
     
 }// End class
