@@ -21,6 +21,7 @@
 		95A28A65219338430090CE18 /* shuffle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 95A28A61219338430090CE18 /* shuffle.wav */; };
 		95A28A68219338B20090CE18 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A28A67219338B20090CE18 /* AVFoundation.framework */; };
 		95A28A6A219338F70090CE18 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A28A69219338F70090CE18 /* SoundManager.swift */; };
+		95E195A62193EA1A00B6C367 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E195A52193EA1A00B6C367 /* MainMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		95A28A61219338430090CE18 /* shuffle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shuffle.wav; sourceTree = "<group>"; };
 		95A28A67219338B20090CE18 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		95A28A69219338F70090CE18 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		95E195A52193EA1A00B6C367 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,14 +76,15 @@
 		9551E0BC21908CFE007A270B /* MemoryMatch */ = {
 			isa = PBXGroup;
 			children = (
-				95A28A5D219338190090CE18 /* Sounds */,
 				9551E0BD21908CFE007A270B /* AppDelegate.swift */,
 				9551E0BF21908CFE007A270B /* ViewController.swift */,
+				95E195A52193EA1A00B6C367 /* MainMenu.swift */,
 				9551E0CF219091E1007A270B /* CardModel.swift */,
 				9551E0D12190937C007A270B /* Card.swift */,
 				951EFA9D2190DF0000C67617 /* CardCollectionViewCell.swift */,
 				95A28A69219338F70090CE18 /* SoundManager.swift */,
 				9551E0C121908CFE007A270B /* Main.storyboard */,
+				95A28A5D219338190090CE18 /* Sounds */,
 				9551E0C421908CFF007A270B /* Assets.xcassets */,
 				9551E0C621908CFF007A270B /* LaunchScreen.storyboard */,
 				9551E0C921908CFF007A270B /* Info.plist */,
@@ -185,6 +188,7 @@
 			files = (
 				9551E0C021908CFE007A270B /* ViewController.swift in Sources */,
 				9551E0BE21908CFE007A270B /* AppDelegate.swift in Sources */,
+				95E195A62193EA1A00B6C367 /* MainMenu.swift in Sources */,
 				9551E0D0219091E1007A270B /* CardModel.swift in Sources */,
 				951EFA9E2190DF0000C67617 /* CardCollectionViewCell.swift in Sources */,
 				9551E0D22190937C007A270B /* Card.swift in Sources */,

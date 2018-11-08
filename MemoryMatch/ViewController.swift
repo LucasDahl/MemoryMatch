@@ -278,12 +278,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Creats an action for the alert message
         let alertAction = UIAlertAction(title: "Play Again", style: .default) { (action) in
             
+            // Restart the game - Make the same VC reload
             self.newGame()
+            
+        }
+        
+        let mainMenuAction = UIAlertAction(title: "Main Menu", style: .default) { (action) in
+            
+            // Brings you back to the main menu
+            let mainMenu = self.storyboard?.instantiateViewController(withIdentifier: "mainMenu") as! MainMenu
+            self.present(mainMenu, animated: true, completion: nil)
             
         }
         
         // Adds the action to the alert
         alert.addAction(alertAction)
+        alert.addAction(mainMenuAction)
         
         // Presents the alert
         present(alert, animated: true, completion: nil)
@@ -303,6 +313,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         RunLoop.main.add(timer!, forMode: RunLoop.Mode.common)
         
     }
-    
+
 }// End class
 
