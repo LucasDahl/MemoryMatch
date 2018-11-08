@@ -279,8 +279,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let alertAction = UIAlertAction(title: "Play Again", style: .default) { (action) in
             
             // TODO: restart the game - Make the same VC reload
-            let gameScene = self.storyboard?.instantiateViewController(withIdentifier: "gameScene") as! ViewController
-            self.present(gameScene, animated: true, completion: nil)
+//            let gameScene = self.storyboard?.instantiateViewController(withIdentifier: "gameScene") as! ViewController
+//            self.present(gameScene, animated: true, completion: nil)
+            
+            self.newGame()
             
         }
         
@@ -300,6 +302,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Presents the alert
         present(alert, animated: true, completion: nil)
     
+    }
+    
+    // This is a function to start a new game
+    func newGame() {
+        
+        collectionView.reloadData()
+        timerLabel.textColor = UIColor.black
+        cardArray = model.getCards()
+        milliseconds += 10 * 1000
+        timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: RunLoop.Mode.common)
+        
     }
     
     
